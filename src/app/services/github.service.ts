@@ -8,17 +8,17 @@ export class GithubService{
   private client_secret= 'a69ab407132059ae30e74221535807b4ff38fbbb';
   constructor(private _http: Http){
     console.log('Github service is started');
-    this.userName='nhemnt';
-  }
-  getUser(){
-    return this._http.get('https://api.github.com/users/'+ this.userName+ '?client_id='+this.client_id+'&client_secret='+this.client_secret)
-      .map(res => res.json());
-  }
-  getRepos(){
-    return this._http.get('https://api.github.com/users/'+ this.userName+ '/repos?client_id='+this.client_id+'&client_secret='+this.client_secret)
-      .map(res => res.json());
-  }
-  updateUsername(username:string){
-    this.userName= username;
-  }
+this.userName='nhemnt';
+}
+getUser(){
+  return this._http.get('https://api.github.com/users/'+ this.userName+ '?client_id='+this.client_id+'&client_secret='+this.client_secret)
+    .map(res => res.json());
+}
+getRepos(){
+  return this._http.get('https://api.github.com/users/'+ this.userName+ '/repos?client_id='+this.client_id+'&client_secret='+this.client_secret)
+    .map(res => res.json());
+}
+updateUsername(username:string){
+  this.userName= username;
+}
 }
